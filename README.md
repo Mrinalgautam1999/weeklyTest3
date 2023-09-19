@@ -1,10 +1,10 @@
 #### weeklyTest3
-# <h1 align = "center"> Restaurant ModelUsing Spring_Boot </h1>
+# <h1 align = "center"> URL Hit Controller Spring_Boot </h1>
 
 
 <!-- Project Description -->
 ## Overview
-<p align="center">This project, named "Restaurant Model," is a robust Spring Boot application designed for managing user data efficiently. It provides a set of API endpoints that allow you to perform various operations on user records, such as adding, retrieving, updating, and deleting user information. 
+<p align="center">This project, named "URL Hit Controller," is a robust Spring Boot application designed for managing user data efficiently. It provides a set of API endpoints that allow you to perform various operations on user records, such as adding, retrieving, updating, and deleting user information. 
 </p>
 
 <!-- Table of Contents -->
@@ -30,42 +30,33 @@
 
 <!-- Key Features -->
 ## Key Features
-- Add Restaurant
-- Add List of Restaurant
-- Get All Restaurant
-- Get Restaurant Details By RestaurantId
-- Delete Restaurant By RestaurantId.
-- Update Restaurant by RestaurantId
+- Add Visitor
+- Add List of Visitor
+- Get Count by visitorName
+- Get count
 
 <!-- Usage -->
 ## Usage
 - Access the application at `http://localhost:8080`.
-- Use the provided API endpoints to manage your User Management.
+- Use the provided API endpoints to manage hit url controller.
 
 ### Controller:
-- It consists of a class named APIController which basically controls the flow of data.
+- It consists of a class named UPIHitController which basically controls the flow of data.
 - @RestController annotation is used to make the APIController as a controller layer.
 - We perform the CRUD operations such as @PostMapping , @GetMapping , @PutMapping , @DeleteMapping.
 
 ### API Reference
 
-#### Add Restaurant :
-POST Method :  http://localhost:8080/restaurant
+#### Add Visitor :
+POST Method :  http://localhost:8080/visitor
 
-#### Add List Restaurant :
-POST Method :  http://localhost:8080/list/rest
+#### Get All Count of Visitor :
+ - GET Method : http://localhost:8080/total/Count
 
-#### Get All Restaurant :
- - GET Method : http://localhost:8080/allList
+ #### GET visitor By userName :
+ - GET Method :   http://localhost:8080/api/v1/visitor-count-app/username/{userName}/count
 
- #### GET Restaurant By ID :
- - GET Method :   http://localhost:8080/find/detail/by/{id}
 
- #### DELETE Restaurant :
- - DELETE Method :   http://localhost:8080/del/{id}/Rest
-
-  #### Update Restaurant Details :
- - PUT Method :   http://localhost:8086/change/restaurant
 
 
 
