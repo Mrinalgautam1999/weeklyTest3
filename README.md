@@ -63,7 +63,8 @@ etc...
 - @RestController annotation is used to make the APIController as a controller layer.
 - We perform the CRUD operations such as @PostMapping , @GetMapping , @PutMapping , @DeleteMapping.
 
----java
+```java
+
 @Validated
 @RestController
 public class JobController {
@@ -95,10 +96,11 @@ public class JobController {
     @GetMapping("api/v1/type/{type}/And/salary/{salary}")
     public List<Job> getJobBySalaryAndType(Type type, double salary){
         return jobService.getJobBySalaryAndType(type, salary);
-    }
-....//
+    
+   ....//
 
-```  
+```
+
 
  <!-- Acknowledgments -->
 ## Acknowledgments
