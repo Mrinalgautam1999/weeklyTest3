@@ -1,10 +1,60 @@
-#### weeklyTest3
-# <h1 align = "center"> URL Hit Controller Spring_Boot </h1>
+# <h1 align = "center"> User Management System Using Spring_Boot </h1>
+___ 
+<p align="center">
+<a href="Java url">
+    <img alt="Java" src="https://img.shields.io/badge/Java->=8-darkblue.svg" />
+</a>
+<a href="Maven url" >
+    <img alt="Maven" src="https://img.shields.io/badge/maven-3.1.3-brightgreen.svg" />
+</a>
+<a href="Spring Boot url" >
+    <img alt="Spring Boot" src="https://img.shields.io/badge/Spring Boot-3.0.6-brightgreen.svg" />
+</a>
+</p>
 
+```java
+
+@Validated
+@RestController
+public class JobController {
+
+    @Autowired
+    JobService jobService;
+
+
+    /*USE CRUD REPOSITORY*/
+    @PostMapping("api/v1/job")
+    public String addJobs(@RequestBody @Valid List<Job> newJob){
+        return jobService.addJobs(newJob);
+    }
+
+    @GetMapping("api/find/job")
+    public List<Job> getAllJobs(){
+        return jobService.getAllJobs();
+    }
+    @DeleteMapping("api/find/by/{id}")
+    public String getJobById(@PathVariable @Valid Long id){
+        return jobService.getDeletesById(id);
+    }
+    @PutMapping("api/v1/update/{id}/job/date")
+    public String updateAppliedDate(@Valid @PathVariable Long id,@Valid @RequestBody LocalDateTime newAppliedDate) {
+        return jobService.updateAppliedDate(id, newAppliedDate);
+    }
+
+    /*USE CUSTOM FINDERS*/
+    @GetMapping("api/v1/type/{type}/And/salary/{salary}")
+    public List<Job> getJobBySalaryAndType(Type type, double salary){
+        return jobService.getJobBySalaryAndType(type, salary);
+    }
+....//
+
+```
+
+<p align="left">
 
 <!-- Project Description -->
 ## Overview
-<p align="center">This project, named "URL Hit Controller," is a robust Spring Boot application designed for managing user data efficiently. It provides a set of API endpoints that allow you to perform various operations on user records, such as adding, retrieving, updating, and deleting user information. 
+<p align="center">This project, named "Job Search Portal" is a robust Spring Boot application designed for managing user data efficiently. It provides a set of API endpoints that allow you to perform various operations on user records, such as adding, retrieving, updating, and deleting user information. 
 </p>
 
 <!-- Table of Contents -->
@@ -19,47 +69,40 @@
 
 <!-- Technologies Used -->
 ## Technologies Used
-- Java 20
+- Java 21
 - Spring Boot
 - Spring Web Initializer
-- Maven
 - Spring Web Dependency
 - Lombok
 - Validation
+- Swagger
+- MySql Database
 
 
 <!-- Key Features -->
 ## Key Features
-- Add Visitor
-- Add List of Visitor
-- Get Count by visitorName
-- Get count
+- Add List of Jobs
+- Update Jobs
+- Get Jobs
+- Get Jobs by Id And Salary
+- Get Jobs by Location And Salary
+- Delete Jobs By Id
+- Update Jobs By Id
+- update date by Id
+- Delete Job by Title
+etc...
 
 <!-- Usage -->
 ## Usage
-- Access the application at `http://localhost:8080`.
-- Use the provided API endpoints to manage hit url controller.
+- Access the application at `http://localhost:8080/swagger-ui/index.html#/`.
+- Use the provided API endpoints to manage your User Management.
 
 ### Controller:
-- It consists of a class named UPIHitController which basically controls the flow of data.
+- It consists of a class named APIController which basically controls the flow of data.
 - @RestController annotation is used to make the APIController as a controller layer.
 - We perform the CRUD operations such as @PostMapping , @GetMapping , @PutMapping , @DeleteMapping.
 
-### API Reference
-
-#### Add Visitor :
-POST Method :  http://localhost:8080/visitor
-
-#### Get All Count of Visitor :
- - GET Method : http://localhost:8080/total/Count
-
- #### GET visitor By userName :
- - GET Method :   http://localhost:8080/api/v1/visitor-count-app/username/{userName}/count
-
-
-
-
-
+  
 
  <!-- Acknowledgments -->
 ## Acknowledgments
@@ -67,7 +110,7 @@ POST Method :  http://localhost:8080/visitor
 
 <!-- Contact -->
 ## Contact
-For questions or feedback, please contact : Mrinal   
+For questions or feedback, please contact : Mrinal Gautam 
 - Maild Id : mmrinalGautam1999@gmail.com
 
 <h1 align="center">Thank You...<h1>
