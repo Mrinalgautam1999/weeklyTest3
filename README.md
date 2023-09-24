@@ -11,45 +11,6 @@ ___
     <img alt="Spring Boot" src="https://img.shields.io/badge/Spring Boot-3.0.6-brightgreen.svg" />
 </a>
 </p>
-
-```java
-
-@Validated
-@RestController
-public class JobController {
-
-    @Autowired
-    JobService jobService;
-
-
-    /*USE CRUD REPOSITORY*/
-    @PostMapping("api/v1/job")
-    public String addJobs(@RequestBody @Valid List<Job> newJob){
-        return jobService.addJobs(newJob);
-    }
-
-    @GetMapping("api/find/job")
-    public List<Job> getAllJobs(){
-        return jobService.getAllJobs();
-    }
-    @DeleteMapping("api/find/by/{id}")
-    public String getJobById(@PathVariable @Valid Long id){
-        return jobService.getDeletesById(id);
-    }
-    @PutMapping("api/v1/update/{id}/job/date")
-    public String updateAppliedDate(@Valid @PathVariable Long id,@Valid @RequestBody LocalDateTime newAppliedDate) {
-        return jobService.updateAppliedDate(id, newAppliedDate);
-    }
-
-    /*USE CUSTOM FINDERS*/
-    @GetMapping("api/v1/type/{type}/And/salary/{salary}")
-    public List<Job> getJobBySalaryAndType(Type type, double salary){
-        return jobService.getJobBySalaryAndType(type, salary);
-    }
-....//
-
-```
-
 <p align="left">
 
 <!-- Project Description -->
@@ -102,7 +63,42 @@ etc...
 - @RestController annotation is used to make the APIController as a controller layer.
 - We perform the CRUD operations such as @PostMapping , @GetMapping , @PutMapping , @DeleteMapping.
 
-  
+---java
+@Validated
+@RestController
+public class JobController {
+
+    @Autowired
+    JobService jobService;
+
+
+    /*USE CRUD REPOSITORY*/
+    @PostMapping("api/v1/job")
+    public String addJobs(@RequestBody @Valid List<Job> newJob){
+        return jobService.addJobs(newJob);
+    }
+
+    @GetMapping("api/find/job")
+    public List<Job> getAllJobs(){
+        return jobService.getAllJobs();
+    }
+    @DeleteMapping("api/find/by/{id}")
+    public String getJobById(@PathVariable @Valid Long id){
+        return jobService.getDeletesById(id);
+    }
+    @PutMapping("api/v1/update/{id}/job/date")
+    public String updateAppliedDate(@Valid @PathVariable Long id,@Valid @RequestBody LocalDateTime newAppliedDate) {
+        return jobService.updateAppliedDate(id, newAppliedDate);
+    }
+
+    /*USE CUSTOM FINDERS*/
+    @GetMapping("api/v1/type/{type}/And/salary/{salary}")
+    public List<Job> getJobBySalaryAndType(Type type, double salary){
+        return jobService.getJobBySalaryAndType(type, salary);
+    }
+....//
+
+```  
 
  <!-- Acknowledgments -->
 ## Acknowledgments
