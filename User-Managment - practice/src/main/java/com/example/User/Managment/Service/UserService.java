@@ -46,11 +46,10 @@ public class UserService {
 
     public String deleteById(Integer id) {
         for(User user : getAllUser()){
-            if(user.getUserId().equals(id)) {
+            if(user.getUserId().equals(id)){
                 getAllUser().remove(id);
             }
-            return "User were Deleted";
         }
-        return "Invalid userId";
+        return null;
     }
 }

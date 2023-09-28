@@ -30,6 +30,7 @@ public class User {
 
     @Min(18)
     private Integer userAge;
+
     private Gender gender;
     private Type userType;
     private LocalDateTime userDOB;
