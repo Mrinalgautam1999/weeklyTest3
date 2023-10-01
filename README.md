@@ -1,4 +1,4 @@
-# <h1 align = "center"> University Event Management System Using Spring_Boot </h1>
+# <h1 align = "center"> E-Commerce Application Using Spring_Boot </h1>
 ___ 
 <p align="center">
 <a href="Java url">
@@ -18,7 +18,7 @@ ___
 
 <!-- Project Description -->
 ## Overview
-<p align="center">This project, named "University Event Management System" is a robust Spring Boot application designed for managing user data efficiently. It provides a set of API endpoints that allow you to perform various operations on user records, such as adding, retrieving, updating, and deleting user information. 
+<p align="center">This project, named "E-Commerce Application" is a robust Spring Boot application designed for managing user data efficiently. It provides a set of API endpoints that allow you to perform various operations on user records, such as adding, retrieving, updating, and deleting user information. 
 </p>
 
 <!-- Table of Contents -->
@@ -45,14 +45,13 @@ ___
 
 <!-- Key Features -->
 ## Key Features
-- Add List of Students
-- Update Students Information
-- Get Students Information
-- Get Students Information by Id 
-- Get Event Information
-- Delete Students Information By Id
-- Update Event By Id
-- Delete Event By Id
+- Add List of products
+- Add List of Users
+- Add List of Addresses
+- Place order
+- Get Order by OrderId
+- Delete  products
+- Delete Order By Id
 
 <!-- Usage -->
 ## Usage
@@ -66,23 +65,28 @@ ___
 
 ### API Reference
 
-#### Add Students Information :
-POST Method :  http://localhost:8080/swagger-ui/index.html#/students
+#### Add List of products :
+POST Method :  http://localhost:8080/swagger-ui/index.html#/products
 
 
-#### Get Student By Id  :
- - GET Method : http://localhost:8080/swagger-ui/index.html#/students
+#### Add List of Users  :
+ - GET Method : http://localhost:8080/swagger-ui/index.html#/users
 
- #### GET Event Information By ID :
- - GET Method :  http://localhost:8080/swagger-ui/index.html#/events
+ #### Add List of Addresses :
+ - GET Method :  http://localhost:8080/swagger-ui/index.html#/addresses
+ - 
+ #### DELETE Product By ProductId :
+ - DELETE Method :   http://localhost:8080/swagger-ui/index.html#/product/productId/{productId}
 
- #### DELETE Event By Id :
- - DELETE Method :   http://localhost:8080/swagger-ui/index.html#/event/eventId{id}
-
-  #### Update Event Details :
- - PUT Method :   http://localhost:8080/swagger-ui/index.html#/event/eventId{id}
+  #### Order Place :
+ - post Method :   http://localhost:8080/swagger-ui/index.html#/order
 
 
+
+
+ <!-- Acknowledgments -->
+## Acknowledgments
+- Thank you to the Spring Boot and Java communities for providing excellent tools and resources.
 
 
  <!-- Acknowledgments -->
