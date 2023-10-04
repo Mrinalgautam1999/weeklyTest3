@@ -1,4 +1,4 @@
-# <h1 align = "center"> E-Commerce Application Using Spring_Boot </h1>
+# <h1 align = "center"> Employee Address Mapping Using Spring_Boot </h1>
 ___ 
 <p align="center">
 <a href="Java url">
@@ -18,7 +18,7 @@ ___
 
 <!-- Project Description -->
 ## Overview
-<p align="center">This project, named "E-Commerce Application" is a robust Spring Boot application designed for managing user data efficiently. It provides a set of API endpoints that allow you to perform various operations on user records, such as adding, retrieving, updating, and deleting user information. 
+<p align="center">This project, named "Employee Address Mapping" is a robust Spring Boot application designed for managing user data efficiently. It provides a set of API endpoints that allow you to perform various operations on user records, such as adding, retrieving, updating, and deleting user information. 
 </p>
 
 <!-- Table of Contents -->
@@ -45,13 +45,12 @@ ___
 
 <!-- Key Features -->
 ## Key Features
-- Add List of products
-- Add List of Users
+- Add List of Employees
 - Add List of Addresses
-- Place order
-- Get Order by OrderId
-- Delete  products
-- Delete Order By Id
+- Update Employee details
+- Delete Employee By EmployeeId
+- Update Address details
+- Delete Address By Id
 
 <!-- Usage -->
 ## Usage
@@ -65,21 +64,21 @@ ___
 
 ### API Reference
 
-#### Add List of products :
-POST Method :  http://localhost:8080/swagger-ui/index.html#/products
+#### Add List of Employees :
+POST Method :  http://localhost:8080/swagger-ui/index.html#/emps
 
 
-#### Add List of Users  :
- - GET Method : http://localhost:8080/swagger-ui/index.html#/users
+#### Update Employees Details  :
+ - GET Method : http://localhost:8080/swagger-ui/index.html#/emp/name/id/{empId}
 
- #### Add List of Addresses :
- - GET Method :  http://localhost:8080/swagger-ui/index.html#/addresses
+ #### Add  Addresse :
+ - GET Method :  http://localhost:8080/swagger-ui/index.html#/addresse
  - 
- #### DELETE Product By ProductId :
- - DELETE Method :   http://localhost:8080/swagger-ui/index.html#/product/productId/{productId}
+ #### DELETE Employee By EmployeeId :
+ - DELETE Method :   http://localhost:8080/swagger-ui/index.html#/emp/id/{empId}
 
-  #### Order Place :
- - post Method :   http://localhost:8080/swagger-ui/index.html#/order
+  #### DELETE Address By AddressId  :
+ - PUT Method :   http://localhost:8080/swagger-ui/index.html#/address/{id}
 
 
 
