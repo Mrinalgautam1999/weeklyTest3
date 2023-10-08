@@ -47,10 +47,47 @@ ___
 ## Key Features
 - Add List of Student
 - Add List of Addresses
+- Add List of Course
 - Update student address
 - Delete address By Id
 - Update Address details
 - Delete student By Id
+- Delete address by Id
+
+
+
+
+
+```java
+
+@RestController
+public class ApplicationController {
+
+    @Autowired
+    ApplicationService applicationService;
+
+    @GetMapping("api/addresses")
+    public List<Address> GetAll(){
+        return applicationService.getAll();
+    }
+
+    @PostMapping("api/upload/new/address")
+    public String addAddress(@RequestBody List<Address> newAddress){
+        return applicationService.addAddress(newAddress);
+    }
+
+
+    @PutMapping("update/{id}/address")
+    public String updateAddress(@PathVariable Long id, @RequestBody Address address){
+            return applicationService.updateAddress(id, address);
+    }
+
+    @DeleteMapping("remove/address")
+    public String removeAddress(@RequestBody Integer id){
+        return applicationService.removeAddress(id);
+        }
+    //...
+```
 
 <!-- Usage -->
 ## Usage
