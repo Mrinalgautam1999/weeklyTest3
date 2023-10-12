@@ -56,9 +56,6 @@ public class ApplicationService {
         return studentRepo.findAll();
     }
 
-    public Student getStudentById(Integer studentId) {
-        return studentRepo.findById(studentId).orElseThrow();
-    }
 
     public Student updateStudent(Integer studentId, Address updatedStudent) {
         Student student = studentRepo.findById(studentId).orElseThrow();
