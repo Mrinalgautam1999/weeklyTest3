@@ -1,4 +1,4 @@
-# <h1 align = "center"> Employee Address Mapping Using Spring_Boot </h1>
+# <h1 align = "center"> Appliction using 1-m,1-1,m-m Using Spring_Boot </h1>
 ___ 
 <p align="center">
 <a href="Java url">
@@ -45,12 +45,49 @@ ___
 
 <!-- Key Features -->
 ## Key Features
-- Add List of Employees
+- Add List of Student
 - Add List of Addresses
-- Update Employee details
-- Delete Employee By EmployeeId
+- Add List of Course
+- Update student address
+- Delete address By Id
 - Update Address details
-- Delete Address By Id
+- Delete student By Id
+- Delete address by Id
+
+
+
+
+
+```java
+
+@RestController
+public class ApplicationController {
+
+    @Autowired
+    ApplicationService applicationService;
+
+    @GetMapping("api/addresses")
+    public List<Address> GetAll(){
+        return applicationService.getAll();
+    }
+
+    @PostMapping("api/upload/new/address")
+    public String addAddress(@RequestBody List<Address> newAddress){
+        return applicationService.addAddress(newAddress);
+    }
+
+
+    @PutMapping("update/{id}/address")
+    public String updateAddress(@PathVariable Long id, @RequestBody Address address){
+            return applicationService.updateAddress(id, address);
+    }
+
+    @DeleteMapping("remove/address")
+    public String removeAddress(@RequestBody Integer id){
+        return applicationService.removeAddress(id);
+        }
+    //...
+```
 
 <!-- Usage -->
 ## Usage
@@ -64,21 +101,35 @@ ___
 
 ### API Reference
 
-#### Add List of Employees :
-POST Method :  http://localhost:8080/swagger-ui/index.html#/emps
+#### Add List of Students :
+- POST Method : [ http://localhost:8080/swagger-ui/index.html#/emps](http://localhost:8080/course)
 
+#### Add List of Address :
+- POST Method : [ http://localhost:8080/swagger-ui/index.html#/emps](http://localhost:8080/api/addresses)
 
-#### Update Employees Details  :
- - GET Method : http://localhost:8080/swagger-ui/index.html#/emp/name/id/{empId}
+#### Add  Listof Course :
+ - POST Method : [ http://localhost:8080/swagger-ui/index.html#/addresse](http://localhost:8080/course)
 
- #### Add  Addresse :
- - GET Method :  http://localhost:8080/swagger-ui/index.html#/addresse
- - 
- #### DELETE Employee By EmployeeId :
- - DELETE Method :   http://localhost:8080/swagger-ui/index.html#/emp/id/{empId}
+#### Update Address Details  :
+ - PUT Method :[ http://localhost:8080/swagger-ui/index.html#/emp/name/id/{empId}](http://localhost:8080/update/1/address)
+
+#### Update Adress by StudentID  :
+ - PUT Method :[ http://localhost:8080/swagger-ui/index.html#/emp/name/id/{empId}](http://localhost:8080/update/1/address)
+
+#### Get Addresse :
+ - GET Method :  [http://localhost:8080/swagger-ui/index.html#/addresse](http://localhost:8080/api/addresses)
+
+ #### Get Student :
+ - GET Method : [ http://localhost:8080/swagger-ui/index.html#/addresse](http://localhost:8080/api/addresses)
+
+ #### Get Course :
+ - GET Method :  [http://localhost:8080/swagger-ui/index.html#/addresse](http://localhost:8080/remove/1)
+ 
+ #### DELETE Student By StudentId :
+ - DELETE Method :   [http://localhost:8080/swagger-ui/index.html#/emp/id/{empId}](http://localhost:8080/remove/1)
 
   #### DELETE Address By AddressId  :
- - PUT Method :   http://localhost:8080/swagger-ui/index.html#/address/{id}
+ - DELETE Method :   [http://localhost:8080/swagger-ui/index.html#/address/{id}](http://localhost:8080/remove/address)
 
 
 
